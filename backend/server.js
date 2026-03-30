@@ -1,6 +1,7 @@
 import express from "express";
 import mongoose from "mongoose";
 import router from "./routes/bookRoutes.js";
+import categoryRouter from "./routes/categoryRoutes.js";
 import dotenv from "dotenv";
 import cors from "cors";
 
@@ -10,6 +11,8 @@ const app = express();
 app.use(cors({ origin: "*" }));
 app.use(express.json());
 app.use("/api/books", router);
+app.use("/api/categories", categoryRouter);
+
 
 try {
   await mongoose.connect(process.env.DB_URI);
