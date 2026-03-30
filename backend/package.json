@@ -1,0 +1,23 @@
+{
+  "name": "atelier_restapi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "books-api/server.js",
+  "scripts": {
+    "start": "node books-api/server.js",
+    "dev": "nodemon books-api/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "express": "^5.2.1",
+    "mongoose": "^8.7.3"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
+}
