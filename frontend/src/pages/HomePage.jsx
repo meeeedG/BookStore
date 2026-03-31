@@ -9,7 +9,7 @@ function HomePage() {
         {keycloak.authenticated ? (
           <>
             <span style={{ fontWeight: '500', color: 'var(--text-light)' }}>
-              👋 Bonjour, {keycloak.tokenParsed?.preferred_username || "Utilisateur"}!
+              Bonjour, {keycloak.tokenParsed?.preferred_username || "Utilisateur"}!
             </span>
             <button className="btn btn-secondary" onClick={() => keycloak.logout()} style={{ padding: '8px 16px', fontSize: '0.9rem' }}>
               Déconnexion
@@ -26,7 +26,7 @@ function HomePage() {
       <section className="hero-section">
         <h1 className="hero-title">Votre Bibliothèque</h1>
         <p className="hero-subtitle">
-          Découvrez une plateforme ultra-rapide et moderne conçue pour simplifier la gestion de vos livres. Ajoutez, recherchez et organisez vos collections avec une interface fluide et un design élégant.
+          Ajoutez, recherchez et organisez vos collections de livres avec une interface fluide.
         </p>
         <div className="hero-buttons">
           <Link to={"/books"} className="btn">

@@ -1,0 +1,300 @@
+/* Import the same font we use in our amazing React App */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+body {
+  margin: 0;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif !important;
+  color: #f1f5f9 !important;
+  background: #0f172a !important;
+  min-height: 100vh;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  /* Add matching gradient from HomePage */
+}
+
+/* Add a beautiful animated background over everything */
+body::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at top right, rgba(139, 92, 246, 0.15), transparent 40%),
+              radial-gradient(circle at bottom left, rgba(59, 130, 246, 0.15), transparent 40%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* The Main Login Window Wrapper */
+.login-pf-page {
+  padding: 0 !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  z-index: 10;
+}
+
+/* The Box */
+.card-pf, .pf-c-card {
+  background: rgba(30, 41, 59, 0.7) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 16px !important;
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3) !important;
+  padding: 40px !important;
+  width: 100% !important;
+  max-width: 450px !important;
+  margin: auto !important;
+}
+
+/* Remove default headers to make it clean */
+.login-pf-header, #kc-header {
+  display: none !important;
+}
+
+/* Form Titles */
+#kc-page-title {
+  font-size: 1.8rem !important;
+  font-weight: 700 !important;
+  color: #fff !important;
+  text-align: center !important;
+  margin-bottom: 30px !important;
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 50%, #EC4899 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Inputs and Input Groups */
+.pf-c-form-control, input[type="text"], input[type="password"], input[type="email"] {
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-radius: 8px !important;
+  color: #f1f5f9 !important;
+  padding: 12px 16px !important;
+  font-size: 1rem !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  transition: all 0.3s ease !important;
+  margin-bottom: 20px !important;
+}
+
+/* Fix for Patternfly Input Groups (Password Eye Icon) */
+.pf-c-input-group {
+  background: transparent !important;
+  border: none !important;
+  margin-bottom: 20px !important;
+}
+
+.pf-c-input-group .pf-c-form-control {
+  margin-bottom: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-right: none !important;
+}
+
+.pf-c-input-group .pf-c-button.pf-m-control {
+  background: rgba(15, 23, 42, 0.6) !important;
+  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+  border-left: none !important;
+  border-top-right-radius: 8px !important;
+  border-bottom-right-radius: 8px !important;
+  color: #94a3b8 !important;
+  padding: 0 16px !important;
+}
+
+.pf-c-input-group .pf-c-button.pf-m-control:hover {
+  background: rgba(30, 41, 59, 0.8) !important;
+  color: #fff !important;
+}
+
+.pf-c-form-control:focus, input[type="text"]:focus, input[type="password"]:focus {
+  outline: none !important;
+  border-color: #8b5cf6 !important;
+  box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.3) !important;
+}
+
+/* Labels and Parent Wrappers */
+.pf-c-form__group-label {
+  display: flex !important;
+  flex-direction: row !important;
+  align-items: baseline !important;
+  gap: 5px !important;
+  margin-bottom: 8px !important;
+}
+
+label, .pf-c-form__label {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+  font-weight: 500 !important;
+  display: inline-block !important; /* Fallback for safe wrapping */
+  margin-bottom: 0 !important; /* Margin moved to wrapper */
+  width: auto !important;
+}
+
+/* Force the text and asterisk to behave purely as flowing text */
+.pf-c-form__label-text, .pf-c-form__label-required, .required {
+  display: inline !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  width: auto !important;
+  white-space: nowrap !important;
+}
+
+/* Let the asterisk stay red */
+.pf-c-form__label-required, .required {
+  color: #ef4444 !important;
+  margin-left: 4px !important;
+}
+
+/* Error Messages */
+.pf-c-form__helper-text.pf-m-error, 
+.pf-m-error, 
+[id^="input-error"], 
+.kc-feedback-text.error {
+  color: #ef4444 !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  margin-top: 5px !important;
+}
+
+/* Buttons */
+.pf-c-button.pf-m-primary, input[type="submit"] {
+  background: linear-gradient(135deg, #3B82F6 0%, #8B5CF6 100%) !important;
+  color: white !important;
+  border: none !important;
+  border-radius: 8px !important;
+  padding: 14px 24px !important;
+  font-size: 1rem !important;
+  font-weight: 600 !important;
+  cursor: pointer !important;
+  transition: all 0.3s ease !important;
+  width: 100% !important;
+  margin-top: 10px !important;
+}
+
+.pf-c-button.pf-m-primary:hover, input[type="submit"]:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 8px 16px rgba(139, 92, 246, 0.4) !important;
+}
+
+/* Helper Text & Links (e.g., Register, Forgot Password) */
+a, #kc-registration a, .pf-c-login__main-footer-links a {
+  color: #8b5cf6 !important;
+  text-decoration: none !important;
+  font-weight: 600 !important;
+  transition: color 0.3s ease !important;
+}
+
+a:hover, #kc-registration a:hover {
+  color: #a78bfa !important;
+  text-decoration: underline !important;
+}
+
+/* Keep structural spacing */
+#kc-form, #kc-content, .pf-c-login__main {
+  width: 100% !important;
+}
+
+/* Footer / Extra info area */
+#kc-info-wrapper {
+  color: #94a3b8 !important;
+  font-size: 0.9rem !important;
+  text-align: center !important;
+  margin-top: 25px !important;
+  padding-top: 20px !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+/* =========================================================
+   REGISTRATION FORM 2-COLUMN GRID LAYOUT REDESIGN
+   ========================================================= */
+
+/* Expand the Modal width beautifully to hold 2 columns easily */
+.card-pf, .pf-c-card {
+    max-width: 600px !important; 
+}
+
+/* The registration form Grid Container */
+#kc-register-form, form[action*="registration"] {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 10px 20px !important; /* Row gap and Column gap */
+    width: 100% !important;
+}
+
+/* Ensure Form Groups wrap their columns */
+#kc-register-form > div, 
+#kc-register-form > .pf-c-form__group, 
+form[action*="registration"] > div {
+    grid-column: span 2; /* Full width by default */
+    margin-bottom: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Robust fix to prevent the input from mysteriously collapsing against the error text */
+#kc-register-form .pf-c-form-control,
+#kc-register-form input[type="text"], 
+#kc-register-form input[type="password"], 
+#kc-register-form input[type="email"] {
+    min-height: 48px !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    display: block !important;
+    width: 100% !important;
+}
+
+/* Target the 6 main fields to be side-by-side (span exactly 1 column) */
+#kc-register-form > div:has(input[name*="firstName"]),
+#kc-register-form > div:has(input[name*="lastName"]),
+#kc-register-form > div:has(input[name*="username"]),
+#kc-register-form > div:has(input[name*="email"]),
+#kc-register-form > div:has(input[name*="password"]),
+#kc-register-form > div:has(input[name*="password-confirm"]) {
+    grid-column: span 1 !important;
+}
+
+/* EXPLICIT RE-ORDERING (Exactly what you asked for) */
+
+/* Row 1: First Name & Last Name */
+#kc-register-form > div:has(input[name*="firstName"]) { order: 1 !important; }
+#kc-register-form > div:has(input[name*="lastName"]) { order: 2 !important; }
+
+/* Row 2: Username & Email */
+#kc-register-form > div:has(input[name*="username"]) { order: 3 !important; }
+#kc-register-form > div:has(input[name*="email"]) { order: 4 !important; }
+
+/* Row 3: Password & Confirm Password */
+#kc-register-form > div:has(input[name="password"]) { order: 5 !important; }
+#kc-register-form > div:has(input[name="password-confirm"]) { order: 6 !important; }
+
+/* Ensure the register button & links sit at the very bottom spanning BOTH columns */
+#kc-register-form > div#kc-form-buttons,
+#kc-register-form > div#kc-form-options,
+#kc-register-form > div.pf-c-form__group.pf-m-action,
+#kc-register-form > div:has(input[type="submit"]) {
+    grid-column: span 2 !important;
+    order: 10 !important;
+    margin-top: 20px !important;
+}
+
+/* Make it responsive for Mobile devices */
+@media (max-width: 600px) {
+    #kc-register-form, form[action*="registration"] {
+        grid-template-columns: 1fr !important;
+    }
+    #kc-register-form > div {
+        grid-column: span 1 !important;
+    }
+    #kc-register-form > div#kc-form-buttons,
+    #kc-register-form > div#kc-form-options,
+    #kc-register-form > div.pf-c-form__group.pf-m-action,
+    #kc-register-form > div:has(input[type="submit"]) {
+        grid-column: span 1 !important;
+    }
+}
