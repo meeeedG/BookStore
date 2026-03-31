@@ -8,8 +8,8 @@ function KeycloakProvider({ children }) {
     keycloak
       .init({ onLoad: "check-sso", pkceMethod: "S256" })
       .then((authenticated) => {
-        if (!authenticated) keycloak.login();
-        else setReady(true);
+        // We do NOT force login here. We just check if they are logged in.
+        setReady(true);
       })
       .catch((error) => {
         setReady(true);
@@ -17,7 +17,14 @@ function KeycloakProvider({ children }) {
       });
   }, []);
 
-  if (!ready) return <div>Loading...</div>;
+  if (!ready) {
+    return (
+      <div className="app-container" style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div className="loader"></div>
+      </div>
+    );
+  }
+
   return children;
 }
 

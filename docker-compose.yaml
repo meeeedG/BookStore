@@ -27,3 +27,9 @@ services:
       KC_HOSTNAME_STRICT: "false"
     ports:
       - "8080:8080"
+    volumes:
+      - ./theme:/opt/keycloak/themes/bookstore-theme
+      - keycloak-data:/opt/keycloak/data
+
+volumes:
+  keycloak-data:

@@ -6,6 +6,20 @@ import HomePage from "./pages/HomePage";
 import BooksPage from "./pages/BooksPage";
 import BookEditPage from "./pages/BookEditPage";
 import BookDetailsPage from "./pages/BookDetailsPage";
+import keycloak from "./auth/keycloak";
+
+// Interceptor to add Keycloak token
+axios.interceptors.request.use(
+  (config) => {
+    if (keycloak.authenticated && keycloak.token) {
+      config.headers.Authorization = `Bearer ${keycloak.token}`;
+    }
+    return config;
+  },
+  (error) => {
+    return Promise.reject(error);
+  }
+);
 
 function App(props) {
   return (

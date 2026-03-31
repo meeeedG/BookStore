@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
+import keycloak from "../auth/keycloak";
 
 function BookDetailsPage() {
   const { id } = useParams();
@@ -59,10 +60,12 @@ function BookDetailsPage() {
               Publié le: {new Date(book.publishedAt).toLocaleDateString()}
             </p>
           )}
-          <div className="flex-row" style={{ marginTop: '32px' }}>
-            <Link to={`/books/edit/${id}`} className="btn">Modifier ce livre</Link>
-            <button onClick={handleDelete} className="btn btn-danger">Supprimer</button>
-          </div>
+          {keycloak.authenticated && (
+            <div className="flex-row" style={{ marginTop: '32px' }}>
+              <Link to={`/books/edit/${id}`} className="btn">Modifier ce livre</Link>
+              <button onClick={handleDelete} className="btn btn-danger">Supprimer</button>
+            </div>
+          )}
         </div>
       ) : (
         <div className="empty-state">

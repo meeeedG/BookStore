@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import BookCard from "../components/BookCard";
+import keycloak from "../auth/keycloak";
 
 function BooksPage() {
   const [books, setBooks] = useState([]);
@@ -70,9 +71,11 @@ function BooksPage() {
         <Link to={"/"} className="btn btn-secondary">
           &larr; Retour
         </Link>
-        <Link to={"/books/add"} className="btn">
-          + Ajouter un Livre
-        </Link>
+        {keycloak.authenticated ? (
+          <Link to={"/books/add"} className="btn">
+            + Ajouter un Livre
+          </Link>
+        ) : null}
       </div>
       
       <h1 className="page-title">Notre Collection</h1>
@@ -93,7 +96,7 @@ function BooksPage() {
           onChange={(e) => setSelectedCategory(e.target.value)}
         >
           <option value="">Toutes les catégories</option>
-          {categories.map((cat) => (
+          {Array.from(new Map(categories.map(cat => [cat.name, cat])).values()).map((cat) => (
             <option key={cat._id} value={cat._id}>
               {cat.name}
             </option>

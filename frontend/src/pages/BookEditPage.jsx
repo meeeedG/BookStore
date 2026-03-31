@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
+import keycloak from "../auth/keycloak";
 
 function BookEditPage() {
   const { id } = useParams();
@@ -17,6 +18,12 @@ function BookEditPage() {
   const [loading, setLoading] = useState(isEditing);
 
   useEffect(() => {
+    // Force login if not authenticated
+    if (!keycloak.authenticated) {
+      keycloak.login();
+      return;
+    }
+
     const fetchData = async () => {
       try {
         const catRes = await axios.get("http://localhost:5000/api/categories");
@@ -137,7 +144,7 @@ function BookEditPage() {
               onChange={handleChange}
             >
               <option value="">Sélectionner une catégorie (Optionnel)</option>
-              {categories.map((cat) => (
+              {Array.from(new Map(categories.map(cat => [cat.name, cat])).values()).map((cat) => (
                 <option key={cat._id} value={cat._id}>
                   {cat.name}
                 </option>
