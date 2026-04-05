@@ -7,25 +7,25 @@ A robust, professional-grade full-stack web application designed for managing a 
 ### 🏠 Public Interface
 | 1. Landing Page (Guest) | 2. Books Collection |
 |:---:|:---:|
-| ![Landing Page](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/1.png) | ![Books Collection](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/7.png) |
+| ![Landing Page](./frontend/screenshots/1.png) | ![Books Collection](./frontend/screenshots/7.png) |
 | *Modern landing page welcoming guests.* | *Browse and filter the book collection.* |
 
 ### 🔐 Authentication Flow (Custom Keycloak Theme)
 | 3. Login Page | 4. Registration Page | 5. Login Error State |
 |:---:|:---:|:---:|
-| ![Login Page](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/2.png) | ![Registration Page](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/3.png) | ![Login Error](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/5.png) |
+| ![Login Page](./frontend/screenshots/2.png) | ![Registration Page](./frontend/screenshots/3.png) | ![Login Error](./frontend/screenshots/5.png) |
 | *Unified glassmorphism login UI.* | *Multi-column registration layout.* | *Custom red validation error feedback.* |
 
 ### 🔑 User Sessions & Management (Authenticated)
 | 6. Landing Page (User) | 7. User Details (Keycloak) |
 |:---:|:---:|
-| ![User Landing](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/6.png) | ![User Table](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/4.png) |
+| ![User Landing](./frontend/screenshots/6.png) | ![User Table](./frontend/screenshots/4.png) |
 | *Protected 'Add Book' actions visible.* | *Keycloak backend user management.* |
 
 ### 📚 Book Operations
 | 8. Add/Edit Book | 9. Book Details Page |
 |:---:|:---:|
-| ![Add Book](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/8.png) | ![Book Details](https://raw.githubusercontent.com/meeeedG/BookStore/main/frontend/screenshots/9.png) |
+| ![Add Book](./frontend/screenshots/8.png) | ![Book Details](./frontend/screenshots/9.png) |
 | *Clean, responsive book entry forms.* | *Detailed view with edit/delete actions.* |
 
 
